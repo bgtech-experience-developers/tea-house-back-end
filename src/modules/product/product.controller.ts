@@ -12,4 +12,11 @@ export class ProductController{
     return await prisma.pRODUCT.findMany()
         
     }
-}
+    @Get('/metric')
+    async getMetricProduct(){
+
+    }
+    @Get('/total')
+    async totalAvailableProduct(){
+        return await prisma.pRODUCT.count({where:{available:true}})
+    }}

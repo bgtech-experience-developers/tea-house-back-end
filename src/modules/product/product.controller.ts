@@ -9,7 +9,7 @@ export class ProductController{
   
     @Get('/')
     async getProductList(){
-    return await prisma.pRODUCT.findMany()
+    return await prisma.pRODUCT.findMany({include:{category:true}})
         
     }
     @Get('/metric')

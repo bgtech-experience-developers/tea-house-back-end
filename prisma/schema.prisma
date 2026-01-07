@@ -34,7 +34,7 @@ model PAYMENT {
   product_id String
   funny_message String
   receipt_url String?
-  
+  product PRODUCT @relation(fields: [product_id],references: [id])
   created_at DateTime @default(now())
   updated_at DateTime @default(now())
   
@@ -44,10 +44,12 @@ model PRODUCT {
   id String @unique @default(uuid())
   description String
   avatar_icon String
+  name String
   price Int
   available Boolean @default(true)
   category_id String
   category CATEGORY @relation(fields: [category_id],references: [id])
+  Payment PAYMENT[]
   created_at DateTime @default(now())
   updated_at DateTime @default(now())
   @@map("product")

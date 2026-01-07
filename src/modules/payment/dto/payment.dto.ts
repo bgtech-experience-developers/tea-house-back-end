@@ -1,4 +1,5 @@
-import { IsNotEmpty, IsOptional, isString, IsString } from 'class-validator'
+import { MethodPayment } from '@prisma/client'
+import { IsEnum, IsNotEmpty, IsOptional, isString, IsString } from 'class-validator'
 
 export class CreatePaymentDto {
   @IsString()
@@ -9,5 +10,9 @@ export class CreatePaymentDto {
   receipt: string
   @IsString()
   @IsOptional()
-  message:String
+  message:string
+  @IsEnum(MethodPayment, {
+    message: 'Método de pagamento inválido',
+  })
+  method: MethodPayment
 }

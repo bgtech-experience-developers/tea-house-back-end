@@ -1,0 +1,31 @@
+
+version: '3.8'
+services:
+  db:
+    image: postgres:15-alpine
+    env_file: .env  
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: tea_house
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - tea_network
+  api:
+    build: .
+    env_file: .env  
+    ports:
+      - "6000:3000"
+    depends_on:
+      - db
+    networks:
+      - tea_network
+      - consulpam_network_dev  # Rede externa
+networks:
+  tea_network:
+    external: true
+  consulpam_network_dev:
+    external: true
+volumes:
+  postgres_data:

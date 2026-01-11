@@ -757,6 +757,7 @@ export const PAYMENTScalarFieldEnum = {
   method: 'method',
   status: 'status',
   product_id: 'product_id',
+  funny_message: 'funny_message',
   receipt_url: 'receipt_url',
   created_at: 'created_at',
   updated_at: 'updated_at'
@@ -769,6 +770,7 @@ export const PRODUCTScalarFieldEnum = {
   id: 'id',
   description: 'description',
   avatar_icon: 'avatar_icon',
+  name: 'name',
   price: 'price',
   available: 'available',
   category_id: 'category_id',

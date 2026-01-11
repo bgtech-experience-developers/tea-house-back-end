@@ -1,30 +1,37 @@
 
+# Dockerfile ATUALIZADO
+FROM node:20-alpine AS builder
+
+
 # Dockerfile PARA YARN (Node 20 já tem Yarn)
 # ============ STAGE 1: Build ============
+
 
 FROM node:20-alpine AS builder
 WORKDIR /app
 
-# Copiar arquivos do Yarn
+# 1. Copiar TUDO que o Prisma precisa
 COPY package.json yarn.lock ./
 COPY prisma ./prisma/
 
-# Instalar dependências com YARN
-RUN yarn install --frozen-lockfile  # Equivalente ao npm ci
+
+# 2. Instalar dependências
+RUN yarn install --frozen-lockfile
 
 
-# Copiar o resto e buildar
-COPY . .
+# 3. GERAR PRISMA CLIENT ANTES de copiar o resto
 RUN npx prisma generate
+
+# 4. Copiar código fonte
+COPY . .
+
+# 5. Build
 RUN yarn build
 
-
-# ============ STAGE 2: Production ============
 FROM node:20-alpine AS production
 
 WORKDIR /app
 
-# Copiar apenas o necessário do builder
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/package.json ./
 COPY --from=builder /app/yarn.lock ./

@@ -1,5 +1,5 @@
 # Dockerfile ATUALIZADO
-FROM node:20-bookworm AS builder
+FROM node:20-alpine AS builder
 
 WORKDIR /app
 

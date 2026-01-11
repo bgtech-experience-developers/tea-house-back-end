@@ -1,5 +1,4 @@
 import { Controller, Get } from "@nestjs/common";
-import { PrismaClient } from "@prisma/client";
 import { Prisma } from "src/generated/prisma/client";
 import {prisma} from "src/prismaClienteInstance";
 

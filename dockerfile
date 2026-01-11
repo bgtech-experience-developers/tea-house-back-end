@@ -1,4 +1,6 @@
+
 # Dockerfile ATUALIZADO
+
 FROM node:20-alpine AS builder
 
 WORKDIR /app
@@ -9,6 +11,7 @@ COPY prisma ./prisma/
 COPY prisma.config.ts ./
 
 # 2. Instalar dependências
+
 RUN yarn install --frozen-lockfile
 
 # 3. GERAR PRISMA CLIENT ANTES de copiar o resto

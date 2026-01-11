@@ -33,6 +33,7 @@ COPY --from=builder /app/yarn.lock ./
 COPY --from=builder /app/prisma ./prisma
 COPY --from=builder /app/dist ./dist
 
+CMD ["node", "dist/src/main.js"]
 
 
 EXPOSE 3000

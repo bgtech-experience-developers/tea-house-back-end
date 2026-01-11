@@ -23,7 +23,7 @@ export class PaymentController{
             
             await this.prisma.$transaction(async (tsx)=>{
                 
-                await tsx.pAYMENT.create({data:{method: Body.method,product_id:product.id,status:'PENDING',receipt_url:Body.receipt,funny_message:Body.message}})
+                await tsx.pAYMENT.create({data:{method: Body.method,product_id:product.id,status:'PENDING',funny_message:Body.message}})
                 await tsx.pRODUCT.update({where:{id:productId},data:{available:false}})
                 
             })

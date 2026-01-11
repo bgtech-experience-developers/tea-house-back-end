@@ -6,8 +6,8 @@ export class CreatePaymentDto {
   @IsNotEmpty()
   customerName: string
   @IsString()
-  @IsNotEmpty()
-  receipt: string
+  @IsOptional()
+  receipt?: string
   @IsString()
   @IsOptional()
   message:string

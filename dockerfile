@@ -7,7 +7,7 @@ COPY prisma.config.ts ./
 
 RUN yarn install --frozen-lockfile
 
-COPY src ./src
+COPY . .
 COPY tsconfig*.json ./
 
 RUN npx prisma generate

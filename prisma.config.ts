@@ -10,6 +10,6 @@ export default defineConfig({
     path: "prisma/migrations",
   },
   datasource: {
-    url:   process.env.DATABASE_URL,
+    url:   'postgresql://sabrina:sab12@db:5432/tea_house',
   },
 });

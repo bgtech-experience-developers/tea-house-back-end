@@ -1,6 +1,6 @@
 
 # Dockerfile ATUALIZADO
-FROM node:20-alpine AS builder
+FROM node:20-bookworm AS builder
 
 
 # Dockerfile PARA YARN (Node 20 já tem Yarn)

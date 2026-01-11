@@ -1,5 +1,7 @@
-import { MethodPayment } from '@prisma/client'
+
+import { MethodPayment } from 'src/generated/prisma/enums'
 import { IsEnum, IsNotEmpty, IsOptional, isString, IsString } from 'class-validator'
+
 
 export class CreatePaymentDto {
   @IsString()

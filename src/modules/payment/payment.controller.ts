@@ -2,7 +2,7 @@ import { Body, ConflictException, Controller, Get, Logger, NotFoundException, Pa
 import { CreatePaymentDto } from "./dto/payment.dto";
 import { PrismaService } from "../prisma/prisma.service";
 import { NotFoundError, throwError } from "rxjs";
-import { StatusPayment } from "src/generated/prisma/enums";
+import { StatusPayment } from "prisma/generated/prisma/enums";
 import path from "path";
 import { NotifyService } from "../service/notification.service";
 

@@ -1,5 +1,5 @@
 
-import { MethodPayment } from 'src/generated/prisma/enums'
+import { MethodPayment } from 'prisma/generated/prisma/enums'
 import { IsEnum, IsNotEmpty, IsOptional, isString, IsString } from 'class-validator'
 
 

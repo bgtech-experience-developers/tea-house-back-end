@@ -9,7 +9,7 @@ export class NotifyService{
     constructor(private readonly messagingGateway:MessagingGatewayService){}
      async sendNotificationPix(customerName:string,product:ProductDTO){
         const payloadNotificationPix:EmailPaymentCreated = {
-            customerName,emailUser: 'sabrinakmm@hotmail.com', model: modelEmailTemplete.TEA, productName:product.name,productPrice:product.price,subject: '💚 Um presente acabou de ser pago!',
+            customerName,emailUser: 'adinalima06@gmail.com', model: modelEmailTemplete.TEA, productName:product.name,productPrice:product.price,subject: '💚 Um presente acabou de ser pago!',
             templete: TemplateEmail.GIFT
         }
         this.messagingGateway.sendToQueue('',payloadNotificationPix)

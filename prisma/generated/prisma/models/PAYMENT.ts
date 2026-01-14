@@ -29,6 +29,7 @@ export type PAYMENTMinAggregateOutputType = {
   method: $Enums.MethodPayment | null
   status: $Enums.StatusPayment | null
   product_id: string | null
+  donor_name: string | null
   funny_message: string | null
   receipt_url: string | null
   created_at: Date | null
@@ -40,6 +41,7 @@ export type PAYMENTMaxAggregateOutputType = {
   method: $Enums.MethodPayment | null
   status: $Enums.StatusPayment | null
   product_id: string | null
+  donor_name: string | null
   funny_message: string | null
   receipt_url: string | null
   created_at: Date | null
@@ -51,6 +53,7 @@ export type PAYMENTCountAggregateOutputType = {
   method: number
   status: number
   product_id: number
+  donor_name: number
   funny_message: number
   receipt_url: number
   created_at: number
@@ -64,6 +67,7 @@ export type PAYMENTMinAggregateInputType = {
   method?: true
   status?: true
   product_id?: true
+  donor_name?: true
   funny_message?: true
   receipt_url?: true
   created_at?: true
@@ -75,6 +79,7 @@ export type PAYMENTMaxAggregateInputType = {
   method?: true
   status?: true
   product_id?: true
+  donor_name?: true
   funny_message?: true
   receipt_url?: true
   created_at?: true
@@ -86,6 +91,7 @@ export type PAYMENTCountAggregateInputType = {
   method?: true
   status?: true
   product_id?: true
+  donor_name?: true
   funny_message?: true
   receipt_url?: true
   created_at?: true
@@ -170,7 +176,8 @@ export type PAYMENTGroupByOutputType = {
   method: $Enums.MethodPayment
   status: $Enums.StatusPayment
   product_id: string
-  funny_message: string
+  donor_name: string
+  funny_message: string | null
   receipt_url: string | null
   created_at: Date
   updated_at: Date
@@ -202,7 +209,8 @@ export type PAYMENTWhereInput = {
   method?: Prisma.EnumMethodPaymentFilter<"PAYMENT"> | $Enums.MethodPayment
   status?: Prisma.EnumStatusPaymentFilter<"PAYMENT"> | $Enums.StatusPayment
   product_id?: Prisma.StringFilter<"PAYMENT"> | string
-  funny_message?: Prisma.StringFilter<"PAYMENT"> | string
+  donor_name?: Prisma.StringFilter<"PAYMENT"> | string
+  funny_message?: Prisma.StringNullableFilter<"PAYMENT"> | string | null
   receipt_url?: Prisma.StringNullableFilter<"PAYMENT"> | string | null
   created_at?: Prisma.DateTimeFilter<"PAYMENT"> | Date | string
   updated_at?: Prisma.DateTimeFilter<"PAYMENT"> | Date | string
@@ -214,7 +222,8 @@ export type PAYMENTOrderByWithRelationInput = {
   method?: Prisma.SortOrder
   status?: Prisma.SortOrder
   product_id?: Prisma.SortOrder
-  funny_message?: Prisma.SortOrder
+  donor_name?: Prisma.SortOrder
+  funny_message?: Prisma.SortOrderInput | Prisma.SortOrder
   receipt_url?: Prisma.SortOrderInput | Prisma.SortOrder
   created_at?: Prisma.SortOrder
   updated_at?: Prisma.SortOrder
@@ -229,7 +238,8 @@ export type PAYMENTWhereUniqueInput = Prisma.AtLeast<{
   method?: Prisma.EnumMethodPaymentFilter<"PAYMENT"> | $Enums.MethodPayment
   status?: Prisma.EnumStatusPaymentFilter<"PAYMENT"> | $Enums.StatusPayment
   product_id?: Prisma.StringFilter<"PAYMENT"> | string
-  funny_message?: Prisma.StringFilter<"PAYMENT"> | string
+  donor_name?: Prisma.StringFilter<"PAYMENT"> | string
+  funny_message?: Prisma.StringNullableFilter<"PAYMENT"> | string | null
   receipt_url?: Prisma.StringNullableFilter<"PAYMENT"> | string | null
   created_at?: Prisma.DateTimeFilter<"PAYMENT"> | Date | string
   updated_at?: Prisma.DateTimeFilter<"PAYMENT"> | Date | string
@@ -241,7 +251,8 @@ export type PAYMENTOrderByWithAggregationInput = {
   method?: Prisma.SortOrder
   status?: Prisma.SortOrder
   product_id?: Prisma.SortOrder
-  funny_message?: Prisma.SortOrder
+  donor_name?: Prisma.SortOrder
+  funny_message?: Prisma.SortOrderInput | Prisma.SortOrder
   receipt_url?: Prisma.SortOrderInput | Prisma.SortOrder
   created_at?: Prisma.SortOrder
   updated_at?: Prisma.SortOrder
@@ -258,7 +269,8 @@ export type PAYMENTScalarWhereWithAggregatesInput = {
   method?: Prisma.EnumMethodPaymentWithAggregatesFilter<"PAYMENT"> | $Enums.MethodPayment
   status?: Prisma.EnumStatusPaymentWithAggregatesFilter<"PAYMENT"> | $Enums.StatusPayment
   product_id?: Prisma.StringWithAggregatesFilter<"PAYMENT"> | string
-  funny_message?: Prisma.StringWithAggregatesFilter<"PAYMENT"> | string
+  donor_name?: Prisma.StringWithAggregatesFilter<"PAYMENT"> | string
+  funny_message?: Prisma.StringNullableWithAggregatesFilter<"PAYMENT"> | string | null
   receipt_url?: Prisma.StringNullableWithAggregatesFilter<"PAYMENT"> | string | null
   created_at?: Prisma.DateTimeWithAggregatesFilter<"PAYMENT"> | Date | string
   updated_at?: Prisma.DateTimeWithAggregatesFilter<"PAYMENT"> | Date | string
@@ -268,7 +280,8 @@ export type PAYMENTCreateInput = {
   id?: string
   method: $Enums.MethodPayment
   status: $Enums.StatusPayment
-  funny_message: string
+  donor_name: string
+  funny_message?: string | null
   receipt_url?: string | null
   created_at?: Date | string
   updated_at?: Date | string
@@ -280,7 +293,8 @@ export type PAYMENTUncheckedCreateInput = {
   method: $Enums.MethodPayment
   status: $Enums.StatusPayment
   product_id: string
-  funny_message: string
+  donor_name: string
+  funny_message?: string | null
   receipt_url?: string | null
   created_at?: Date | string
   updated_at?: Date | string
@@ -290,7 +304,8 @@ export type PAYMENTUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   method?: Prisma.EnumMethodPaymentFieldUpdateOperationsInput | $Enums.MethodPayment
   status?: Prisma.EnumStatusPaymentFieldUpdateOperationsInput | $Enums.StatusPayment
-  funny_message?: Prisma.StringFieldUpdateOperationsInput | string
+  donor_name?: Prisma.StringFieldUpdateOperationsInput | string
+  funny_message?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   receipt_url?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -302,7 +317,8 @@ export type PAYMENTUncheckedUpdateInput = {
   method?: Prisma.EnumMethodPaymentFieldUpdateOperationsInput | $Enums.MethodPayment
   status?: Prisma.EnumStatusPaymentFieldUpdateOperationsInput | $Enums.StatusPayment
   product_id?: Prisma.StringFieldUpdateOperationsInput | string
-  funny_message?: Prisma.StringFieldUpdateOperationsInput | string
+  donor_name?: Prisma.StringFieldUpdateOperationsInput | string
+  funny_message?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   receipt_url?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -313,7 +329,8 @@ export type PAYMENTCreateManyInput = {
   method: $Enums.MethodPayment
   status: $Enums.StatusPayment
   product_id: string
-  funny_message: string
+  donor_name: string
+  funny_message?: string | null
   receipt_url?: string | null
   created_at?: Date | string
   updated_at?: Date | string
@@ -323,7 +340,8 @@ export type PAYMENTUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   method?: Prisma.EnumMethodPaymentFieldUpdateOperationsInput | $Enums.MethodPayment
   status?: Prisma.EnumStatusPaymentFieldUpdateOperationsInput | $Enums.StatusPayment
-  funny_message?: Prisma.StringFieldUpdateOperationsInput | string
+  donor_name?: Prisma.StringFieldUpdateOperationsInput | string
+  funny_message?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   receipt_url?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -334,7 +352,8 @@ export type PAYMENTUncheckedUpdateManyInput = {
   method?: Prisma.EnumMethodPaymentFieldUpdateOperationsInput | $Enums.MethodPayment
   status?: Prisma.EnumStatusPaymentFieldUpdateOperationsInput | $Enums.StatusPayment
   product_id?: Prisma.StringFieldUpdateOperationsInput | string
-  funny_message?: Prisma.StringFieldUpdateOperationsInput | string
+  donor_name?: Prisma.StringFieldUpdateOperationsInput | string
+  funny_message?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   receipt_url?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -345,6 +364,7 @@ export type PAYMENTCountOrderByAggregateInput = {
   method?: Prisma.SortOrder
   status?: Prisma.SortOrder
   product_id?: Prisma.SortOrder
+  donor_name?: Prisma.SortOrder
   funny_message?: Prisma.SortOrder
   receipt_url?: Prisma.SortOrder
   created_at?: Prisma.SortOrder
@@ -356,6 +376,7 @@ export type PAYMENTMaxOrderByAggregateInput = {
   method?: Prisma.SortOrder
   status?: Prisma.SortOrder
   product_id?: Prisma.SortOrder
+  donor_name?: Prisma.SortOrder
   funny_message?: Prisma.SortOrder
   receipt_url?: Prisma.SortOrder
   created_at?: Prisma.SortOrder
@@ -367,6 +388,7 @@ export type PAYMENTMinOrderByAggregateInput = {
   method?: Prisma.SortOrder
   status?: Prisma.SortOrder
   product_id?: Prisma.SortOrder
+  donor_name?: Prisma.SortOrder
   funny_message?: Prisma.SortOrder
   receipt_url?: Prisma.SortOrder
   created_at?: Prisma.SortOrder
@@ -441,7 +463,8 @@ export type PAYMENTCreateWithoutProductInput = {
   id?: string
   method: $Enums.MethodPayment
   status: $Enums.StatusPayment
-  funny_message: string
+  donor_name: string
+  funny_message?: string | null
   receipt_url?: string | null
   created_at?: Date | string
   updated_at?: Date | string
@@ -451,7 +474,8 @@ export type PAYMENTUncheckedCreateWithoutProductInput = {
   id?: string
   method: $Enums.MethodPayment
   status: $Enums.StatusPayment
-  funny_message: string
+  donor_name: string
+  funny_message?: string | null
   receipt_url?: string | null
   created_at?: Date | string
   updated_at?: Date | string
@@ -491,7 +515,8 @@ export type PAYMENTScalarWhereInput = {
   method?: Prisma.EnumMethodPaymentFilter<"PAYMENT"> | $Enums.MethodPayment
   status?: Prisma.EnumStatusPaymentFilter<"PAYMENT"> | $Enums.StatusPayment
   product_id?: Prisma.StringFilter<"PAYMENT"> | string
-  funny_message?: Prisma.StringFilter<"PAYMENT"> | string
+  donor_name?: Prisma.StringFilter<"PAYMENT"> | string
+  funny_message?: Prisma.StringNullableFilter<"PAYMENT"> | string | null
   receipt_url?: Prisma.StringNullableFilter<"PAYMENT"> | string | null
   created_at?: Prisma.DateTimeFilter<"PAYMENT"> | Date | string
   updated_at?: Prisma.DateTimeFilter<"PAYMENT"> | Date | string
@@ -501,7 +526,8 @@ export type PAYMENTCreateManyProductInput = {
   id?: string
   method: $Enums.MethodPayment
   status: $Enums.StatusPayment
-  funny_message: string
+  donor_name: string
+  funny_message?: string | null
   receipt_url?: string | null
   created_at?: Date | string
   updated_at?: Date | string
@@ -511,7 +537,8 @@ export type PAYMENTUpdateWithoutProductInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   method?: Prisma.EnumMethodPaymentFieldUpdateOperationsInput | $Enums.MethodPayment
   status?: Prisma.EnumStatusPaymentFieldUpdateOperationsInput | $Enums.StatusPayment
-  funny_message?: Prisma.StringFieldUpdateOperationsInput | string
+  donor_name?: Prisma.StringFieldUpdateOperationsInput | string
+  funny_message?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   receipt_url?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -521,7 +548,8 @@ export type PAYMENTUncheckedUpdateWithoutProductInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   method?: Prisma.EnumMethodPaymentFieldUpdateOperationsInput | $Enums.MethodPayment
   status?: Prisma.EnumStatusPaymentFieldUpdateOperationsInput | $Enums.StatusPayment
-  funny_message?: Prisma.StringFieldUpdateOperationsInput | string
+  donor_name?: Prisma.StringFieldUpdateOperationsInput | string
+  funny_message?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   receipt_url?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -531,7 +559,8 @@ export type PAYMENTUncheckedUpdateManyWithoutProductInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   method?: Prisma.EnumMethodPaymentFieldUpdateOperationsInput | $Enums.MethodPayment
   status?: Prisma.EnumStatusPaymentFieldUpdateOperationsInput | $Enums.StatusPayment
-  funny_message?: Prisma.StringFieldUpdateOperationsInput | string
+  donor_name?: Prisma.StringFieldUpdateOperationsInput | string
+  funny_message?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   receipt_url?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -544,6 +573,7 @@ export type PAYMENTSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   method?: boolean
   status?: boolean
   product_id?: boolean
+  donor_name?: boolean
   funny_message?: boolean
   receipt_url?: boolean
   created_at?: boolean
@@ -556,6 +586,7 @@ export type PAYMENTSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exten
   method?: boolean
   status?: boolean
   product_id?: boolean
+  donor_name?: boolean
   funny_message?: boolean
   receipt_url?: boolean
   created_at?: boolean
@@ -568,6 +599,7 @@ export type PAYMENTSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exten
   method?: boolean
   status?: boolean
   product_id?: boolean
+  donor_name?: boolean
   funny_message?: boolean
   receipt_url?: boolean
   created_at?: boolean
@@ -580,13 +612,14 @@ export type PAYMENTSelectScalar = {
   method?: boolean
   status?: boolean
   product_id?: boolean
+  donor_name?: boolean
   funny_message?: boolean
   receipt_url?: boolean
   created_at?: boolean
   updated_at?: boolean
 }
 
-export type PAYMENTOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "method" | "status" | "product_id" | "funny_message" | "receipt_url" | "created_at" | "updated_at", ExtArgs["result"]["pAYMENT"]>
+export type PAYMENTOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "method" | "status" | "product_id" | "donor_name" | "funny_message" | "receipt_url" | "created_at" | "updated_at", ExtArgs["result"]["pAYMENT"]>
 export type PAYMENTInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   product?: boolean | Prisma.PRODUCTDefaultArgs<ExtArgs>
 }
@@ -607,7 +640,8 @@ export type $PAYMENTPayload<ExtArgs extends runtime.Types.Extensions.InternalArg
     method: $Enums.MethodPayment
     status: $Enums.StatusPayment
     product_id: string
-    funny_message: string
+    donor_name: string
+    funny_message: string | null
     receipt_url: string | null
     created_at: Date
     updated_at: Date
@@ -1039,6 +1073,7 @@ export interface PAYMENTFieldRefs {
   readonly method: Prisma.FieldRef<"PAYMENT", 'MethodPayment'>
   readonly status: Prisma.FieldRef<"PAYMENT", 'StatusPayment'>
   readonly product_id: Prisma.FieldRef<"PAYMENT", 'String'>
+  readonly donor_name: Prisma.FieldRef<"PAYMENT", 'String'>
   readonly funny_message: Prisma.FieldRef<"PAYMENT", 'String'>
   readonly receipt_url: Prisma.FieldRef<"PAYMENT", 'String'>
   readonly created_at: Prisma.FieldRef<"PAYMENT", 'DateTime'>

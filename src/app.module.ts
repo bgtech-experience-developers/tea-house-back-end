@@ -9,6 +9,7 @@ import { ConfigModule } from '@nestjs/config';
 import { RabbitmqConfigInfra } from './config/rabbitmqConnection.config';
 import { ServeStaticModule } from '@nestjs/serve-static'
 import { join } from 'path'
+import { DashboardModule } from './modules/dashboard/dashboard-metric.module';
 
 
 
@@ -16,7 +17,7 @@ import { join } from 'path'
   imports: [ProductModule,PrismaModule,PaymentModule,UploadModule,ConfigModule.forRoot(),RabbitmqConfigInfra,  ServeStaticModule.forRoot({
       rootPath: join(process.cwd(), 'uploads'),
       serveRoot: '/files', 
-    }),],
+    }),DashboardModule],
   controllers: [AppController],
   providers: [AppService],
 })

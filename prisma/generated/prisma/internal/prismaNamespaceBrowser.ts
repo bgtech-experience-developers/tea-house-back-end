@@ -54,7 +54,8 @@ export const ModelName = {
   COSTUMER: 'COSTUMER',
   PAYMENT: 'PAYMENT',
   PRODUCT: 'PRODUCT',
-  CATEGORY: 'CATEGORY'
+  CATEGORY: 'CATEGORY',
+  PIX_MESSAGE: 'PIX_MESSAGE'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -88,6 +89,7 @@ export const PAYMENTScalarFieldEnum = {
   method: 'method',
   status: 'status',
   product_id: 'product_id',
+  donor_name: 'donor_name',
   funny_message: 'funny_message',
   receipt_url: 'receipt_url',
   created_at: 'created_at',
@@ -120,6 +122,16 @@ export const CATEGORYScalarFieldEnum = {
 } as const
 
 export type CATEGORYScalarFieldEnum = (typeof CATEGORYScalarFieldEnum)[keyof typeof CATEGORYScalarFieldEnum]
+
+
+export const PIX_MESSAGEScalarFieldEnum = {
+  id: 'id',
+  user_name: 'user_name',
+  message: 'message',
+  created_at: 'created_at'
+} as const
+
+export type PIX_MESSAGEScalarFieldEnum = (typeof PIX_MESSAGEScalarFieldEnum)[keyof typeof PIX_MESSAGEScalarFieldEnum]
 
 
 export const SortOrder = {

@@ -387,7 +387,8 @@ export const ModelName = {
   COSTUMER: 'COSTUMER',
   PAYMENT: 'PAYMENT',
   PRODUCT: 'PRODUCT',
-  CATEGORY: 'CATEGORY'
+  CATEGORY: 'CATEGORY',
+  PIX_MESSAGE: 'PIX_MESSAGE'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -403,7 +404,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "cOSTUMER" | "pAYMENT" | "pRODUCT" | "cATEGORY"
+    modelProps: "cOSTUMER" | "pAYMENT" | "pRODUCT" | "cATEGORY" | "pIX_MESSAGE"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -703,6 +704,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    PIX_MESSAGE: {
+      payload: Prisma.$PIX_MESSAGEPayload<ExtArgs>
+      fields: Prisma.PIX_MESSAGEFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.PIX_MESSAGEFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PIX_MESSAGEPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.PIX_MESSAGEFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PIX_MESSAGEPayload>
+        }
+        findFirst: {
+          args: Prisma.PIX_MESSAGEFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PIX_MESSAGEPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.PIX_MESSAGEFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PIX_MESSAGEPayload>
+        }
+        findMany: {
+          args: Prisma.PIX_MESSAGEFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PIX_MESSAGEPayload>[]
+        }
+        create: {
+          args: Prisma.PIX_MESSAGECreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PIX_MESSAGEPayload>
+        }
+        createMany: {
+          args: Prisma.PIX_MESSAGECreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.PIX_MESSAGECreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PIX_MESSAGEPayload>[]
+        }
+        delete: {
+          args: Prisma.PIX_MESSAGEDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PIX_MESSAGEPayload>
+        }
+        update: {
+          args: Prisma.PIX_MESSAGEUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PIX_MESSAGEPayload>
+        }
+        deleteMany: {
+          args: Prisma.PIX_MESSAGEDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.PIX_MESSAGEUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.PIX_MESSAGEUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PIX_MESSAGEPayload>[]
+        }
+        upsert: {
+          args: Prisma.PIX_MESSAGEUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PIX_MESSAGEPayload>
+        }
+        aggregate: {
+          args: Prisma.PIX_MESSAGEAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregatePIX_MESSAGE>
+        }
+        groupBy: {
+          args: Prisma.PIX_MESSAGEGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.PIX_MESSAGEGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.PIX_MESSAGECountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.PIX_MESSAGECountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -757,6 +832,7 @@ export const PAYMENTScalarFieldEnum = {
   method: 'method',
   status: 'status',
   product_id: 'product_id',
+  donor_name: 'donor_name',
   funny_message: 'funny_message',
   receipt_url: 'receipt_url',
   created_at: 'created_at',
@@ -789,6 +865,16 @@ export const CATEGORYScalarFieldEnum = {
 } as const
 
 export type CATEGORYScalarFieldEnum = (typeof CATEGORYScalarFieldEnum)[keyof typeof CATEGORYScalarFieldEnum]
+
+
+export const PIX_MESSAGEScalarFieldEnum = {
+  id: 'id',
+  user_name: 'user_name',
+  message: 'message',
+  created_at: 'created_at'
+} as const
+
+export type PIX_MESSAGEScalarFieldEnum = (typeof PIX_MESSAGEScalarFieldEnum)[keyof typeof PIX_MESSAGEScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -1010,6 +1096,7 @@ export type GlobalOmitConfig = {
   pAYMENT?: Prisma.PAYMENTOmit
   pRODUCT?: Prisma.PRODUCTOmit
   cATEGORY?: Prisma.CATEGORYOmit
+  pIX_MESSAGE?: Prisma.PIX_MESSAGEOmit
 }
 
 /* Types for Logging */

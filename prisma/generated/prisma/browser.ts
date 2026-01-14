@@ -37,3 +37,8 @@ export type PRODUCT = Prisma.PRODUCTModel
  * 
  */
 export type CATEGORY = Prisma.CATEGORYModel
+/**
+ * Model PIX_MESSAGE
+ * 
+ */
+export type PIX_MESSAGE = Prisma.PIX_MESSAGEModel

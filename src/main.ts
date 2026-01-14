@@ -5,8 +5,8 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   app.enableCors({
-    origin: ['http://localhost:3000','https://casanova.bgtech.com.br','https://nossolar.bgtech.com.br'],
-    credentials: true, // use se estiver usando cookies/auth
+    origin: ['http://localhost:3000','https://casa-hs.bgtech.com.br'],
+    credentials: true, 
     methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
   });

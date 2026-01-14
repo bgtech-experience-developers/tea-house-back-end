@@ -32,7 +32,8 @@ model PAYMENT {
   method MethodPayment
   status StatusPayment
   product_id String
-  funny_message String
+  donor_name String
+  funny_message String?
   receipt_url String?
   product PRODUCT @relation(fields: [product_id],references: [id])
   created_at DateTime @default(now())
@@ -63,3 +64,15 @@ model CATEGORY {
  @@map("category")
 
 }
+model PIX_MESSAGE {
+  id String @id @default(uuid())
+
+  user_name String ?
+
+  message String?  
+
+  created_at DateTime @default(now())
+
+  @@map("pix_message")
+}
+

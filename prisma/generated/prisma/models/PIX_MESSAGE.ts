@@ -26,22 +26,22 @@ export type AggregatePIX_MESSAGE = {
 
 export type PIX_MESSAGEMinAggregateOutputType = {
   id: string | null
-  user_name: string | null
-  message: string | null
+  donor_name: string | null
+  funny_message: string | null
   created_at: Date | null
 }
 
 export type PIX_MESSAGEMaxAggregateOutputType = {
   id: string | null
-  user_name: string | null
-  message: string | null
+  donor_name: string | null
+  funny_message: string | null
   created_at: Date | null
 }
 
 export type PIX_MESSAGECountAggregateOutputType = {
   id: number
-  user_name: number
-  message: number
+  donor_name: number
+  funny_message: number
   created_at: number
   _all: number
 }
@@ -49,22 +49,22 @@ export type PIX_MESSAGECountAggregateOutputType = {
 
 export type PIX_MESSAGEMinAggregateInputType = {
   id?: true
-  user_name?: true
-  message?: true
+  donor_name?: true
+  funny_message?: true
   created_at?: true
 }
 
 export type PIX_MESSAGEMaxAggregateInputType = {
   id?: true
-  user_name?: true
-  message?: true
+  donor_name?: true
+  funny_message?: true
   created_at?: true
 }
 
 export type PIX_MESSAGECountAggregateInputType = {
   id?: true
-  user_name?: true
-  message?: true
+  donor_name?: true
+  funny_message?: true
   created_at?: true
   _all?: true
 }
@@ -143,8 +143,8 @@ export type PIX_MESSAGEGroupByArgs<ExtArgs extends runtime.Types.Extensions.Inte
 
 export type PIX_MESSAGEGroupByOutputType = {
   id: string
-  user_name: string | null
-  message: string | null
+  donor_name: string | null
+  funny_message: string | null
   created_at: Date
   _count: PIX_MESSAGECountAggregateOutputType | null
   _min: PIX_MESSAGEMinAggregateOutputType | null
@@ -171,15 +171,15 @@ export type PIX_MESSAGEWhereInput = {
   OR?: Prisma.PIX_MESSAGEWhereInput[]
   NOT?: Prisma.PIX_MESSAGEWhereInput | Prisma.PIX_MESSAGEWhereInput[]
   id?: Prisma.StringFilter<"PIX_MESSAGE"> | string
-  user_name?: Prisma.StringNullableFilter<"PIX_MESSAGE"> | string | null
-  message?: Prisma.StringNullableFilter<"PIX_MESSAGE"> | string | null
+  donor_name?: Prisma.StringNullableFilter<"PIX_MESSAGE"> | string | null
+  funny_message?: Prisma.StringNullableFilter<"PIX_MESSAGE"> | string | null
   created_at?: Prisma.DateTimeFilter<"PIX_MESSAGE"> | Date | string
 }
 
 export type PIX_MESSAGEOrderByWithRelationInput = {
   id?: Prisma.SortOrder
-  user_name?: Prisma.SortOrderInput | Prisma.SortOrder
-  message?: Prisma.SortOrderInput | Prisma.SortOrder
+  donor_name?: Prisma.SortOrderInput | Prisma.SortOrder
+  funny_message?: Prisma.SortOrderInput | Prisma.SortOrder
   created_at?: Prisma.SortOrder
 }
 
@@ -188,15 +188,15 @@ export type PIX_MESSAGEWhereUniqueInput = Prisma.AtLeast<{
   AND?: Prisma.PIX_MESSAGEWhereInput | Prisma.PIX_MESSAGEWhereInput[]
   OR?: Prisma.PIX_MESSAGEWhereInput[]
   NOT?: Prisma.PIX_MESSAGEWhereInput | Prisma.PIX_MESSAGEWhereInput[]
-  user_name?: Prisma.StringNullableFilter<"PIX_MESSAGE"> | string | null
-  message?: Prisma.StringNullableFilter<"PIX_MESSAGE"> | string | null
+  donor_name?: Prisma.StringNullableFilter<"PIX_MESSAGE"> | string | null
+  funny_message?: Prisma.StringNullableFilter<"PIX_MESSAGE"> | string | null
   created_at?: Prisma.DateTimeFilter<"PIX_MESSAGE"> | Date | string
 }, "id">
 
 export type PIX_MESSAGEOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
-  user_name?: Prisma.SortOrderInput | Prisma.SortOrder
-  message?: Prisma.SortOrderInput | Prisma.SortOrder
+  donor_name?: Prisma.SortOrderInput | Prisma.SortOrder
+  funny_message?: Prisma.SortOrderInput | Prisma.SortOrder
   created_at?: Prisma.SortOrder
   _count?: Prisma.PIX_MESSAGECountOrderByAggregateInput
   _max?: Prisma.PIX_MESSAGEMaxOrderByAggregateInput
@@ -208,78 +208,78 @@ export type PIX_MESSAGEScalarWhereWithAggregatesInput = {
   OR?: Prisma.PIX_MESSAGEScalarWhereWithAggregatesInput[]
   NOT?: Prisma.PIX_MESSAGEScalarWhereWithAggregatesInput | Prisma.PIX_MESSAGEScalarWhereWithAggregatesInput[]
   id?: Prisma.StringWithAggregatesFilter<"PIX_MESSAGE"> | string
-  user_name?: Prisma.StringNullableWithAggregatesFilter<"PIX_MESSAGE"> | string | null
-  message?: Prisma.StringNullableWithAggregatesFilter<"PIX_MESSAGE"> | string | null
+  donor_name?: Prisma.StringNullableWithAggregatesFilter<"PIX_MESSAGE"> | string | null
+  funny_message?: Prisma.StringNullableWithAggregatesFilter<"PIX_MESSAGE"> | string | null
   created_at?: Prisma.DateTimeWithAggregatesFilter<"PIX_MESSAGE"> | Date | string
 }
 
 export type PIX_MESSAGECreateInput = {
   id?: string
-  user_name?: string | null
-  message?: string | null
+  donor_name?: string | null
+  funny_message?: string | null
   created_at?: Date | string
 }
 
 export type PIX_MESSAGEUncheckedCreateInput = {
   id?: string
-  user_name?: string | null
-  message?: string | null
+  donor_name?: string | null
+  funny_message?: string | null
   created_at?: Date | string
 }
 
 export type PIX_MESSAGEUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  user_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  message?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  donor_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  funny_message?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type PIX_MESSAGEUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  user_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  message?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  donor_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  funny_message?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type PIX_MESSAGECreateManyInput = {
   id?: string
-  user_name?: string | null
-  message?: string | null
+  donor_name?: string | null
+  funny_message?: string | null
   created_at?: Date | string
 }
 
 export type PIX_MESSAGEUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  user_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  message?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  donor_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  funny_message?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type PIX_MESSAGEUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  user_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  message?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  donor_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  funny_message?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type PIX_MESSAGECountOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  user_name?: Prisma.SortOrder
-  message?: Prisma.SortOrder
+  donor_name?: Prisma.SortOrder
+  funny_message?: Prisma.SortOrder
   created_at?: Prisma.SortOrder
 }
 
 export type PIX_MESSAGEMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  user_name?: Prisma.SortOrder
-  message?: Prisma.SortOrder
+  donor_name?: Prisma.SortOrder
+  funny_message?: Prisma.SortOrder
   created_at?: Prisma.SortOrder
 }
 
 export type PIX_MESSAGEMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  user_name?: Prisma.SortOrder
-  message?: Prisma.SortOrder
+  donor_name?: Prisma.SortOrder
+  funny_message?: Prisma.SortOrder
   created_at?: Prisma.SortOrder
 }
 
@@ -287,41 +287,41 @@ export type PIX_MESSAGEMinOrderByAggregateInput = {
 
 export type PIX_MESSAGESelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  user_name?: boolean
-  message?: boolean
+  donor_name?: boolean
+  funny_message?: boolean
   created_at?: boolean
 }, ExtArgs["result"]["pIX_MESSAGE"]>
 
 export type PIX_MESSAGESelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  user_name?: boolean
-  message?: boolean
+  donor_name?: boolean
+  funny_message?: boolean
   created_at?: boolean
 }, ExtArgs["result"]["pIX_MESSAGE"]>
 
 export type PIX_MESSAGESelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  user_name?: boolean
-  message?: boolean
+  donor_name?: boolean
+  funny_message?: boolean
   created_at?: boolean
 }, ExtArgs["result"]["pIX_MESSAGE"]>
 
 export type PIX_MESSAGESelectScalar = {
   id?: boolean
-  user_name?: boolean
-  message?: boolean
+  donor_name?: boolean
+  funny_message?: boolean
   created_at?: boolean
 }
 
-export type PIX_MESSAGEOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "user_name" | "message" | "created_at", ExtArgs["result"]["pIX_MESSAGE"]>
+export type PIX_MESSAGEOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "donor_name" | "funny_message" | "created_at", ExtArgs["result"]["pIX_MESSAGE"]>
 
 export type $PIX_MESSAGEPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "PIX_MESSAGE"
   objects: {}
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
-    user_name: string | null
-    message: string | null
+    donor_name: string | null
+    funny_message: string | null
     created_at: Date
   }, ExtArgs["result"]["pIX_MESSAGE"]>
   composites: {}
@@ -747,8 +747,8 @@ export interface Prisma__PIX_MESSAGEClient<T, Null = never, ExtArgs extends runt
  */
 export interface PIX_MESSAGEFieldRefs {
   readonly id: Prisma.FieldRef<"PIX_MESSAGE", 'String'>
-  readonly user_name: Prisma.FieldRef<"PIX_MESSAGE", 'String'>
-  readonly message: Prisma.FieldRef<"PIX_MESSAGE", 'String'>
+  readonly donor_name: Prisma.FieldRef<"PIX_MESSAGE", 'String'>
+  readonly funny_message: Prisma.FieldRef<"PIX_MESSAGE", 'String'>
   readonly created_at: Prisma.FieldRef<"PIX_MESSAGE", 'DateTime'>
 }
     

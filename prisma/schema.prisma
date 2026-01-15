@@ -24,6 +24,7 @@ model COSTUMER {
   name String
   created_at DateTime @default(now())
   updated_at DateTime @default(now())
+
   @@map("costumer")
 
 }
@@ -67,9 +68,9 @@ model CATEGORY {
 model PIX_MESSAGE {
   id String @id @default(uuid())
 
-  user_name String ?
+  donor_name String ?
 
-  message String?  
+  funny_message String?  
 
   created_at DateTime @default(now())
 

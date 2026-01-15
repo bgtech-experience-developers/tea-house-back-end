@@ -126,8 +126,8 @@ export type CATEGORYScalarFieldEnum = (typeof CATEGORYScalarFieldEnum)[keyof typ
 
 export const PIX_MESSAGEScalarFieldEnum = {
   id: 'id',
-  user_name: 'user_name',
-  message: 'message',
+  donor_name: 'donor_name',
+  funny_message: 'funny_message',
   created_at: 'created_at'
 } as const
 

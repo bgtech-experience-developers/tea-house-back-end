@@ -22,7 +22,7 @@ export class PaymentController{
             
             await this.prisma.$transaction(async (tsx)=>{
                 
-                await tsx.pAYMENT.create({data:{method: Body.method,product_id:product.id,status:'PENDING',funny_message:Body.message|| "",donor_name:customer.name}})
+                await tsx.pAYMENT.create({data:{method: Body.method,product_id:product.id,status:'PENDING',funny_message:Body.message|| "",donor_name:customer.name,created_at:new Date()}})
                 
             })
              this.notification.sendNotificationPix(customer.name,product)

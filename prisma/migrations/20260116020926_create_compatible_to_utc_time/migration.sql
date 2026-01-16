@@ -1,0 +1,7 @@
+-- AlterTable
+ALTER TABLE "payment" ALTER COLUMN "created_at" DROP DEFAULT,
+ALTER COLUMN "created_at" SET DATA TYPE TIMESTAMPTZ(6);
+
+-- AlterTable
+ALTER TABLE "pix_message" ALTER COLUMN "created_at" DROP DEFAULT,
+ALTER COLUMN "created_at" SET DATA TYPE TIMESTAMPTZ(6);

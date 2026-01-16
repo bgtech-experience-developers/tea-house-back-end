@@ -283,7 +283,7 @@ export type PAYMENTCreateInput = {
   donor_name: string
   funny_message?: string | null
   receipt_url?: string | null
-  created_at?: Date | string
+  created_at: Date | string
   updated_at?: Date | string
   product: Prisma.PRODUCTCreateNestedOneWithoutPaymentInput
 }
@@ -296,7 +296,7 @@ export type PAYMENTUncheckedCreateInput = {
   donor_name: string
   funny_message?: string | null
   receipt_url?: string | null
-  created_at?: Date | string
+  created_at: Date | string
   updated_at?: Date | string
 }
 
@@ -332,7 +332,7 @@ export type PAYMENTCreateManyInput = {
   donor_name: string
   funny_message?: string | null
   receipt_url?: string | null
-  created_at?: Date | string
+  created_at: Date | string
   updated_at?: Date | string
 }
 
@@ -466,7 +466,7 @@ export type PAYMENTCreateWithoutProductInput = {
   donor_name: string
   funny_message?: string | null
   receipt_url?: string | null
-  created_at?: Date | string
+  created_at: Date | string
   updated_at?: Date | string
 }
 
@@ -477,7 +477,7 @@ export type PAYMENTUncheckedCreateWithoutProductInput = {
   donor_name: string
   funny_message?: string | null
   receipt_url?: string | null
-  created_at?: Date | string
+  created_at: Date | string
   updated_at?: Date | string
 }
 
@@ -529,7 +529,7 @@ export type PAYMENTCreateManyProductInput = {
   donor_name: string
   funny_message?: string | null
   receipt_url?: string | null
-  created_at?: Date | string
+  created_at: Date | string
   updated_at?: Date | string
 }
 

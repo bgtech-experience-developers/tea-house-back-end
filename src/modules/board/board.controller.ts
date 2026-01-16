@@ -7,7 +7,7 @@ export class MessageController{
     constructor(private readonly prismaService:PrismaService){ }
     @Post('/donation-pix')
     async freeDonationPix(@Body() body:BoardDTO){
-        await this.prismaService.pIX_MESSAGE.create({data:{...body}})
+        await this.prismaService.pIX_MESSAGE.create({data:{...body,created_at:new Date()}})
         return 'donation created'
     }
     @Get('/')

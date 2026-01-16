@@ -217,14 +217,14 @@ export type PIX_MESSAGECreateInput = {
   id?: string
   donor_name?: string | null
   funny_message?: string | null
-  created_at?: Date | string
+  created_at: Date | string
 }
 
 export type PIX_MESSAGEUncheckedCreateInput = {
   id?: string
   donor_name?: string | null
   funny_message?: string | null
-  created_at?: Date | string
+  created_at: Date | string
 }
 
 export type PIX_MESSAGEUpdateInput = {
@@ -245,7 +245,7 @@ export type PIX_MESSAGECreateManyInput = {
   id?: string
   donor_name?: string | null
   funny_message?: string | null
-  created_at?: Date | string
+  created_at: Date | string
 }
 
 export type PIX_MESSAGEUpdateManyMutationInput = {
@@ -944,7 +944,7 @@ export type PIX_MESSAGECreateArgs<ExtArgs extends runtime.Types.Extensions.Inter
   /**
    * The data needed to create a PIX_MESSAGE.
    */
-  data?: Prisma.XOR<Prisma.PIX_MESSAGECreateInput, Prisma.PIX_MESSAGEUncheckedCreateInput>
+  data: Prisma.XOR<Prisma.PIX_MESSAGECreateInput, Prisma.PIX_MESSAGEUncheckedCreateInput>
 }
 
 /**

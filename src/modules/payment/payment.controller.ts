@@ -41,7 +41,8 @@ export class PaymentController{
     async recused(@Param('paymentId') paymentId:string){
                const payment = await this.validExistPayment(paymentId)
   
-        await this.modifyStatusAndAvailable(payment.id,'RECUSED',true)
+        // await this.modifyStatusAndAvailable(payment.id,'RECUSED',true)
+        await this.prisma.pAYMENT.delete({where:{id:payment.id}})
         return 'Payment Recused'
     }
     @Patch('/:paymentId/confirm')

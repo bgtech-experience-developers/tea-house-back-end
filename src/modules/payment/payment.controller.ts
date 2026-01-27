@@ -1,11 +1,8 @@
 import { Body, ConflictException, Controller, Get, Logger, NotFoundException, Param, Patch, Post, Put } from "@nestjs/common";
 import { CreatePaymentDto } from "./dto/payment.dto";
 import { PrismaService } from "../prisma/prisma.service";
-import { NotFoundError, throwError } from "rxjs";
 import { StatusPayment } from "prisma/generated/prisma/enums";
-import path from "path";
 import { NotifyService } from "../service/notification.service";
-
 @Controller('payment')
 export class PaymentController{
     constructor(private readonly prisma:PrismaService,private readonly notification:NotifyService){}
@@ -22,7 +19,7 @@ export class PaymentController{
             
             await this.prisma.$transaction(async (tsx)=>{
                 
-                await tsx.pAYMENT.create({data:{method: Body.method,product_id:product.id,status:'PENDING',funny_message:Body.message|| "",donor_name:customer.name,created_at:new Date()}})
+                await tsx.pAYMENT.create({data:{method: Body.method,product_id:product.id,status:'PENDING',funny_message:Body.message || "",donor_name:customer.name,created_at:new Date()}})
                 
             })
              this.notification.sendNotificationPix(customer.name,product)
@@ -100,11 +97,9 @@ async modifyAvailableProduct(isAvailable:boolean,productId:string){
         return product
     }
     async costumerExist(name:string){
-       const customer =  await this.prisma.cOSTUMER.findFirst({where:{name}})
-         if(!customer){
+       
             return await this.createCustomer(name)
-            }
-    return customer
+
     }
     async createCustomer(name:string){
       return  await this.prisma.cOSTUMER.create({data:{name}})
